@@ -16,6 +16,12 @@ body {
   font-family: 'IBM Plex Sans', sans-serif;
 }
 
+/* 
+===============================
+OUTER GRID CSS
+===============================
+*/
+
 .outer-grid {
   display: grid;
   height: 100vh;
@@ -44,8 +50,9 @@ header {
 nav {
   grid-area: alias-nav;
   background-color: rgba(0, 31, 255, 0.8);
+  
 }
-main.inner-grid {
+.inner-grid {
   grid-area: alias-main;
   background-color: rgba(0, 31, 255, 0.2);
 }
@@ -84,6 +91,47 @@ header .header-inner .top-header-items {
 
 /* 
 ===============================
+OUTER GRID CSS
+===============================
+*/
+
+.inner-grid {
+  display: grid;
+  height: 100%;
+  gap: 1rem;
+  grid-template-rows: auto auto 50px;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "alias-mainContent"
+    "alias-aside"
+    "alias-footer";
+}
+
+.inner-grid main.main-content {
+  grid-area: alias-mainContent;
+  background-color: rgba(255, 122, 0);
+  padding: 25px;
+}
+
+.inner-grid main.main-content article {
+  margin-bottom: 20px;
+}
+
+.inner-grid .aside-content {
+  grid-area: alias-aside;
+  background-color: rgba(255, 122,0, 0.4);
+  padding: 25px;
+
+}
+.inner-grid footer {
+  grid-area: alias-footer;
+  background-color: rgba(255, 122,0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 
+===============================
 BREAKPOINTS
 ===============================
 */
@@ -104,7 +152,13 @@ BREAKPOINTS
 }
 
 @media (min-width: 992px) {
-  
+  .inner-grid {
+    grid-template-rows: 1fr 50px;
+    grid-template-columns: 1fr minmax(200px, 290px);
+    grid-template-areas: 
+      "alias-mainContent alias-aside"
+      "alias-footer alias-footer"
+  }
 }
 
 @media (min-width: 1440px) {
