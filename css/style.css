@@ -13,12 +13,24 @@ body {
 .outer-grid {
   display: grid;
   height: 100vh;
-  grid-template-rows: 90px 1fr;
-  grid-template-columns: 70px 1fr;
+  grid-template-rows: 70px 1fr;
+  grid-template-columns: 90px 1fr;
+  grid-template-areas: 
+    "alias-header alias-header"
+    "alias-main alias-main";
+}
+
+.outer-grid-expand {
   grid-template-areas: 
     "alias-header alias-header"
     "alias-nav alias-main";
 }
+
+.hide-nav {
+  display: none;
+}
+
+
 header {
   grid-area: alias-header;
   background-color: rgba(0, 31, 255, 0.5);
@@ -30,4 +42,34 @@ nav {
 main.inner-grid {
   grid-area: alias-main;
   background-color: rgba(0, 31, 255, 0.2);
+}
+
+header .header-inner {
+  margin: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+header .header-inner .brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+header .header-inner .brand strong {
+  color: #fff;
+}
+header .header-inner i {
+  color: #fff;
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+header .header-inner .top-header-items {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: underline;
 }
