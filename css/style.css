@@ -9,3 +9,25 @@
 body {
   font-family: 'IBM Plex Sans', sans-serif;
 }
+
+.outer-grid {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 90px 1fr;
+  grid-template-columns: 70px 1fr;
+  grid-template-areas: 
+    "alias-header alias-header"
+    "alias-nav alias-main";
+}
+header {
+  grid-area: alias-header;
+  background-color: rgba(0, 31, 255, 0.5);
+}
+nav {
+  grid-area: alias-nav;
+  background-color: rgba(0, 31, 255, 0.8);
+}
+main.inner-grid {
+  grid-area: alias-main;
+  background-color: rgba(0, 31, 255, 0.2);
+}
