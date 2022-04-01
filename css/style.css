@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
+/* 
+===============================
+SHARED CSS
+===============================
+*/
+
 *{
   padding: 0;
   margin: 0;
@@ -59,6 +65,7 @@ header .header-inner .brand {
 }
 header .header-inner .brand strong {
   color: #fff;
+  font-size: 1.15rem;
 }
 header .header-inner i {
   color: #fff;
@@ -72,4 +79,34 @@ header .header-inner .top-header-items {
   cursor: pointer;
   color: #fff;
   text-decoration: underline;
+}
+
+
+/* 
+===============================
+BREAKPOINTS
+===============================
+*/
+
+@media (min-width: 576px) {
+  nav {
+    display: block !important;
+  }
+  .outer-grid {
+    grid-template-areas: 
+      "alias-header alias-header"
+      "alias-nav alias-main";
+  }
+
+  .header-inner .brand i.fa-bars {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  
+}
+
+@media (min-width: 1440px) {
+  
 }
