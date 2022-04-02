@@ -49,16 +49,41 @@ header {
 }
 nav {
   grid-area: alias-nav;
-  background-color: rgba(0, 31, 255, 0.8);
-  
+  padding-top: 25px;
+  border-right: 1px solid lightgrey;
+  /* background-color: rgba(0, 31, 255, 0.8); */
 }
+
+nav .nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+
+nav .nav-item:hover {
+  opacity: 0.8;
+}
+nav .nav-item a {
+  text-decoration: none;
+  color: #020202d8;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+nav .nav-item  i.fa-solid {
+  font-weight: 700;
+}
+
 .inner-grid {
   grid-area: alias-main;
-  background-color: rgba(0, 31, 255, 0.2);
+  /* background-color: rgba(0, 31, 255, 0.2); */
 }
 
 header .header-inner {
-  padding: 0 2rem;
+  padding: 0 1.3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -72,11 +97,12 @@ header .header-inner .brand {
 }
 header .header-inner .brand strong {
   color: #fff;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
+  margin-right:10px;
 }
 header .header-inner i {
   color: #fff;
-  font-size: 1.15rem;
+  font-size: 1rem;
   cursor: pointer;
 }
 header .header-inner .top-header-items {
@@ -114,7 +140,7 @@ OUTER GRID CSS
 
 .inner-grid main.main-content {
   grid-area: alias-mainContent;
-  background-color: rgba(255, 122, 0);
+  /* background-color: rgba(255, 122, 0); */
   padding: 20px 2rem;
 }
 
@@ -124,7 +150,7 @@ OUTER GRID CSS
 
 .inner-grid .aside-content {
   grid-area: alias-aside;
-  background-color: rgba(255, 122,0, 0.4);
+  /* background-color: rgba(255, 122,0, 0.4); */
   padding: 20px 2rem;
 
 }
@@ -167,6 +193,13 @@ BREAKPOINTS
 }
 
 @media (min-width: 1440px) {
+  .outer-grid {
+    grid-template-columns: 1fr 950px 1fr;
+    grid-template-areas: 
+      "alias-header alias-header alias-header"
+      "alias-nav alias-main alias-main"
+      ;
+  }
 header .header-inner  {
   display: grid;
   grid-template-columns: 1fr 950px 1fr;
@@ -183,6 +216,12 @@ header .header-inner .brand {
 header .header-inner .top-header-items {
   grid-area: alias-navList;
   justify-self: start;
-  
+}
+
+nav {
+  display: flex !important;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 15px;
 }
 }
