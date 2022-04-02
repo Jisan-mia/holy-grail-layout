@@ -58,7 +58,7 @@ nav {
 }
 
 header .header-inner {
-  margin: 0 2rem;
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -83,6 +83,10 @@ header .header-inner .top-header-items {
   display: flex;
   align-items: center;
   gap: 1rem;
+  
+}
+
+header .header-inner .top-header-items a {
   cursor: pointer;
   color: #fff;
   text-decoration: underline;
@@ -163,5 +167,22 @@ BREAKPOINTS
 }
 
 @media (min-width: 1440px) {
+header .header-inner  {
+  display: grid;
+  grid-template-columns: 1fr 950px 1fr;
+  grid-template-areas: 
+    "alias-brand . alias-navList";
+}
+
+
+header .header-inner .brand {
+  grid-area: alias-brand;
+  justify-self: end;
+}
+
+header .header-inner .top-header-items {
+  grid-area: alias-navList;
+  justify-self: start;
   
+}
 }
