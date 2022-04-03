@@ -216,7 +216,6 @@ MOSAIC(collage) STYLES
 .collage .collage-3 {
   grid-column: 4/-1;
   transform: rotate(3deg);
-
 }
 
 /* 
